@@ -102,7 +102,7 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className=" bg-slate-900 px-1 mt-[-20.5rem]">
+      <div className=" bg-slate-900 px-1 mt-[-12.5rem]">
         <About />
       </div>
       {/* <div className=" bg-slate-900 px-1 ">
