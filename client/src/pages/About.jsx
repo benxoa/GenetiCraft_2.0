@@ -2,12 +2,20 @@ import React from "react";
 import about1 from "../assets/about1.webp";
 import about2 from "../assets/about2.webp";
 import founder from "../assets/c1nxVphFr-QffiU-7ZWBwgIGHcccog2y9Q1fbQyKbvJh9o453L-uOJ8mSUy6fkHOhL.jpg";
+import { Helmet } from "react-helmet";
 
 import { Link } from "react-router-dom";
 
 const About = () => {
   return (
+    
     <div>
+     <Helmet>
+        <title>GenetiCraft | AI Powered PDF Tools</title>
+        <meta name="description" content="Explore AI-powered PDF tools - Translate PDFs, convert PDF text to speech, and extract text content." />
+        <meta charSet="utf-8" />
+        <link rel="canonical" href="https://www.geneticraft.fun/ai-tools" />
+      </Helmet>
       <section class="bg-white dark:bg-gray-900">
         <h1 className="text-slate-200 text-6xl flex justify-center pt-16 ">
           Our UseCase

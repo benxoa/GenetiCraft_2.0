@@ -3,6 +3,8 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import {Helmet} from "react-helmet";
+
 
 const PdftoText = () => {
   const [file, setFile] = useState(null);
@@ -106,6 +108,12 @@ const PdftoText = () => {
   return (
     <>
       <Toaster />
+      <Helmet>
+        <title>GenetiCraft | FREE AI Powered PDF TO TEXT</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content="Convert your PDFs to text with GenetiCraft's free AI-powered PDF to text tool. Easy and efficient conversion of PDF documents." />
+        <link rel="canonical" href="https://www.geneticraft.fun/pdf-to-text" />
+      </Helmet>
 
       <section className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center py-12 ">
   <div className="w-full max-w-[58rem] bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700 sm:p-4 lg:p-6 m-4">

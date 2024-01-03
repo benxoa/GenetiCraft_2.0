@@ -1,9 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from "react-helmet";
+
 
 const AiTools = () => {
   return (
     <>
+     <Helmet>
+        <title>GenetiCraft | AI Powered PDF Tools</title>
+        <meta name="description" content="Explore AI-powered PDF tools - Translate PDFs in to 105+ Languages, convert PDF to speech, and extract text from Pdf." />
+        <meta charSet="utf-8" />
+        <link rel="canonical" href="https://www.geneticraft.fun/ai-tools" />
+      </Helmet>
       <div className="bg-gray-900 dark:bg-gray-900 min-h-screen flex flex-col justify-center items-center pt-4 sm:pt-8 md:pt-1 py-40">
         <h1 className="bg-slate-900 text-white text-5xl flex justify-center mb-4 sm:mb-8">
           AI Powered PDF Tools

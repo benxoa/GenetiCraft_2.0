@@ -8,12 +8,20 @@ import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 import { Link } from "react-router-dom";
 
+import { Helmet } from "react-helmet";
+
 function Home() {
   const [isHovered1, setIsHovered1] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
 
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>GenetiCraft | All in One PDF Tool Box</title>
+        <meta name="description" content="Discover the ultimate AI-powered PDF tool by GenetiCraft. Translate, convert, and manage PDFs effortlessly." />
+        <link rel="canonical" href="https://www.geneticraft.fun" />
+      </Helmet>
       <div className="bg-gray-900 dark:bg-gray-900 min-h-screen flex flex-col justify-center items-center pt-24 sm:pt-12">
         <div className="w-full md:w-3/4 max-w-3xl relative">
           <div className="rounded-lg shadow-lg border-transparent overflow-hidden"></div>
@@ -36,23 +44,24 @@ function Home() {
             </p>
 
             <div className="flex gap-4">
-            <Link to={"/ai-tools"}>
-              <button
-                className={`py-3 px-4 bg-blue-500 text-white rounded-md transition duration-300 ease-in-out transform hover:scale-105`}
-                onMouseEnter={() => setIsHovered1(true)}
-                onMouseLeave={() => setIsHovered1(false)}
-              >
-                Try Now
-              </button>
+              <Link to={"/ai-tools"}>
+                <button
+                  className={`py-3 px-4 bg-blue-500 text-white rounded-md transition duration-300 ease-in-out transform hover:scale-105`}
+                  onMouseEnter={() => setIsHovered1(true)}
+                  onMouseLeave={() => setIsHovered1(false)}
+                >
+                  Try Now
+                </button>
               </Link>
               <Link to="/about">
-              <button
-                className={`py-3 px-4 bg-green-500 text-white rounded-md transition duration-300 ease-in-out transform hover:scale-105`}
-                onMouseEnter={() => setIsHovered2(true)}
-                onMouseLeave={() => setIsHovered2(false)}
-              >
-                Learn More
-              </button></Link>
+                <button
+                  className={`py-3 px-4 bg-green-500 text-white rounded-md transition duration-300 ease-in-out transform hover:scale-105`}
+                  onMouseEnter={() => setIsHovered2(true)}
+                  onMouseLeave={() => setIsHovered2(false)}
+                >
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -108,7 +117,7 @@ function Home() {
       {/* <div className=" bg-slate-900 px-1 ">
         <FAQ />
       </div> */}
-      
+
       <div className=" bg-slate-900 px-1 ">
         <Testimonials />
       </div>
@@ -118,9 +127,6 @@ function Home() {
       <div className=" bg-slate-900 px-1 ">
         <Newsletter />
       </div>
-     
-    
-   
     </>
   );
 }

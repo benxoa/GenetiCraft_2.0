@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import {Helmet} from "react-helmet";
+
 
 const PdfToSpeech = () => {
   const [pdfFile, setPdfFile] = useState(null);
@@ -200,6 +202,12 @@ const PdfToSpeech = () => {
   return (
     <>
       <Toaster />
+      <Helmet>
+        <title>GenetiCraft | AI Powered PDF TO SPEECH IN 45+ LANGUAGES</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content="Utilize GenetiCraft's  AI-powered PDF to speech tool in 45+ languages. Convert your PDF documents into spoken words effortlessly." />
+        <link rel="canonical" href="https://www.geneticraft.fun/pdf-to-speech" />
+      </Helmet>
 
       <section className="bg-gray-50 dark:bg-gray-900 min-h-screen flex items-center justify-center py-12 ">
         <div className="w-full max-w-[58rem] bg-white rounded-lg shadow dark:border dark:bg-gray-800 dark:border-gray-700 sm:p-4 lg:p-6 ">
