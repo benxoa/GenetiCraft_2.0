@@ -54,9 +54,8 @@ const PdftoText = () => {
     else if (credits < 3) {
       toast.error("Insufficient credits, credits must be greater or equal to 7");
       return;
-    }
-
-    try {
+    }else {
+      try {
       const formData = new FormData();
       formData.append("pdf", file);
 
@@ -89,6 +88,9 @@ const PdftoText = () => {
     } catch (error) {
       toast.error("Error uploading file:", error);
     }
+    }
+
+    
   };
 
   const copyText = () => {
