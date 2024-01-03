@@ -118,7 +118,10 @@ const PdfTranslator = () => {
     setFile(selectedFile);
 
     const pageCount = await countPagesInPDF(selectedFile);
-    if (credits < 7) {
+    if(!cookies.userId || !cookies.Authtoken) {
+      toast.error("Please Login or Register")
+    }
+    else if (credits < 7) {
       toast.error("Insufficient credits, credits must be greater or equal to 7");
       return;
     }

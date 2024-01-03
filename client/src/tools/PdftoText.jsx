@@ -53,7 +53,10 @@ const PdftoText = () => {
 
   const uploadFile = async (e) => {
     e.preventDefault();
-    if (credits < 3) {
+    if(!cookies.userId || !cookies.Authtoken) {
+      toast.error("Please Login or Register")
+    }
+    else if (credits < 3) {
       toast.error("Insufficient credits, credits must be greater or equal to 7");
       return;
     }

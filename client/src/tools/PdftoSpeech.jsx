@@ -113,7 +113,10 @@ const PdfToSpeech = () => {
     setPdfFile(selectedFile);
 
     const pageCount = await countPagesInPDF(selectedFile);
-    if (credits < 5) {
+    if(!cookies.userId || !cookies.Authtoken) {
+      toast.error("Please Login or Register")
+    }
+    else if (credits < 5) {
       toast.error(
         "Insufficient credits, credits must be greater or equal to 5"
       );
@@ -155,16 +158,13 @@ const PdfToSpeech = () => {
             );
           } else if (response.data.message.google.status === "success") {
             setDownload(response.data.message.google.audio_resource_url);
-            const res = await fetch(
-              "/api/deduct-credits",
-              {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({ userId: cookies.userId, amount: 5 }),
-              }
-            );
+            const res = await fetch("/api/deduct-credits", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ userId: cookies.userId, amount: 5 }),
+            });
             if (res.status === 200) {
               setcredits(credits - 5);
             } else {
