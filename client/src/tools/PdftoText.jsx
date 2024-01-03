@@ -17,12 +17,7 @@ const PdftoText = () => {
 
   const [cookies, setCookie, removeCookie] = useCookies(["Authtoken"]);
   const [credits, setcredits] = useState(0);
-  useEffect(() => {
-    const token = cookies.Authtoken;
-    if (!token) {
-      Navigate("/login");
-    }
-  }, [cookies.Authtoken]);
+
 
   useEffect(() => {
     const fetchCredits = async () => {
