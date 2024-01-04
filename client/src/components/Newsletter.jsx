@@ -5,6 +5,10 @@ import toast, { Toaster } from "react-hot-toast";
 const Newsletter = () => {
     const [letter, setletter] = useState("")
     const HandleSubmit = async()=> {
+        if(letter === ""){
+            toast.error("Please enter email address.");
+
+        }
         if (letter !== "") {
             if (!letter.includes("@")) {
                 // If the letter is not an empty string and does not contain "@"
