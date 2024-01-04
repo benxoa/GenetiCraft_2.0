@@ -54,7 +54,7 @@ const PdftoText = () => {
       toast.error("Please Login or Register")
     }
     else if (credits < 3) {
-      toast.error("Insufficient credits, credits must be greater or equal to 7");
+      toast.error("Insufficient credits, credits must be greater or equal to 3");
       return;
     }else {
       try {
@@ -83,7 +83,7 @@ const PdftoText = () => {
           toast.error("Failed to deduct credits");
         }
         toast.success("Converted to text successfully")
-        setText(response.data);
+        setText(response.data.text);
       } else {
         toast.error("Failed to convert PDF to text");
       }
