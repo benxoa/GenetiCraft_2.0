@@ -21,6 +21,7 @@ const {
 const { Translate } = require("../controllers/tools/PDFTranlateController");
 const { Text } = require("../controllers/tools/PDFToTextContoller");
 const {Speech} = require("../controllers/tools/PDFToSpeech")
+const {check} = require("../controllers/chec")
 
 const multer = require("multer");
 const path = require("path");
@@ -55,6 +56,8 @@ router.post("/orders/:orderID/capture", CapureOrder);
 router.post("/translate-pdf", upload.single("file"), Translate);
 router.post("/pdf-to-text", upload.single("pdf"), Text);
 router.post("/pdf-to-speech", upload.single("pdf"), Speech);
+
+router.post("/check", check)
 
 
 //*User Routes *//

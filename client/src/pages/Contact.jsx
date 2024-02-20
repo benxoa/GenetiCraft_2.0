@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import toast, { Toaster } from "react-hot-toast";
+import {Helmet} from "react-helmet";
+
 
 
 
@@ -44,6 +46,13 @@ const Contact = () => {
   return (
     <>
           <Toaster />
+          <Helmet>
+        <title>GenetiCraft | Contact</title>
+        <meta charSet="utf-8" />
+        <meta name="description" content="Convert your PDFs to text with GenetiCraft's free AI-powered PDF to text tool. Easy and efficient conversion of PDF documents." />
+        <link rel="canonical" href="https://www.geneticraft.fun/contact" />
+      </Helmet>
+
 
       <section class="bg-white dark:bg-gray-900">
   <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">

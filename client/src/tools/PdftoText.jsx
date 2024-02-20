@@ -54,9 +54,10 @@ const PdftoText = () => {
       toast.error("Please Login or Register")
     }
     else if (credits < 3) {
-      toast.error("Insufficient credits, credits must be greater or equal to 7");
+      toast.error("Insufficient credits, credits must be greater or equal to 3");
       return;
     }else {
+      toast.loading("Converting...")
       try {
       const formData = new FormData();
       formData.append("pdf", file);
@@ -80,14 +81,21 @@ const PdftoText = () => {
         if (res.status === 200) {
           setcredits(credits - 3);
         } else {
+          toast.dismiss()
           toast.error("Failed to deduct credits");
         }
+        toast.dismiss()
+
         toast.success("Converted to text successfully")
-        setText(response.data);
+        setText(response.data.text);
       } else {
+        toast.dismiss()
+
         toast.error("Failed to convert PDF to text");
       }
     } catch (error) {
+      toast.dismiss()
+
       toast.error("Error uploading file:", error);
     }
     }

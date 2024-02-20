@@ -20,6 +20,7 @@ import  PdfTranslator  from '../src/tools/PdfTranslator.jsx';
 import PdftoText from './tools/PdftoText.jsx';
 import PdftoSpeech from './tools/PdftoSpeech.jsx';
 import AiTools from './pages/AiTools.jsx';
+import GenPrivecy from './pages/GenPrivecy.jsx';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -40,6 +41,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/pdf-to-text' element={<PdftoText />} />
       <Route path='/pdf-to-speech' element={<PdftoSpeech />} />
       <Route path='/ai-tools' element={<AiTools />} />
+      <Route path='/geneticraft-app' element={<GenPrivecy />} />
+
 
 
 
