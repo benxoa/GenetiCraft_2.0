@@ -22,6 +22,7 @@ import PdftoSpeech from './tools/PdftoSpeech.jsx';
 import AiTools from './pages/AiTools.jsx';
 import GenPrivecy from './pages/GenPrivecy.jsx';
 import RemoPriecy from './pages/RemoPriecy.jsx';
+import Pixely from './pages/PixelyPrivecy.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -44,6 +45,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/ai-tools' element={<AiTools />} />
       <Route path='/geneticraft-app' element={<GenPrivecy />} />
       <Route path='/remoai-app' element={<RemoPriecy />} />
+      <Route path='/pixely-app' element={<Pixely />} />
+
 
 
 
